@@ -1,38 +1,194 @@
-h1 {
-  color: #f44336;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
-h2 {
-  color: #3f51b5;
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  font-family: Poppins, sans-serif;
+  color: #212121;
+  font-size: 14px;
+  background-color: #fff;
+  line-height: 1.5;
 }
-h3 {
-  color: #4caf50;
+main {
+  flex-grow: 1;
 }
-
-a {
-  color: #ffc107;
+.container {
+  position: relative;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 16px;
 }
-/* header {
-  background-color: #f5f5f5;
-} */
-
-/* nav {
-  background-color: rgba(0, 0, 255, 0.3);
-} */
-
+.box {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  font-size: 64px;
+  color: #fff;
+  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+}
+.box:nth-child(1) {
+  top: 20px;
+  left: 130px;
+  background-color: #1789fc;
+  z-index: 2;
+}
+.box:nth-child(2) {
+  top: 30px;
+  left: 230px;
+  background-color: #ef233c;
+  z-index: 2;
+}
+.box:nth-child(3) {
+  top: 140px;
+  left: 220px;
+  background-color: #ffd07b;
+  z-index: 1;
+}
+.box:nth-child(4) {
+  top: 120px;
+  left: 120px;
+  background-color: #4caf50;
+}
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  font-family: Oswald, sans-serif;
+}
 ul {
   list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
-
+img {
+  display: block;
+  max-width: 100%;
+  object-fit: cover;
+}
+.manager-chat-button {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  padding: 12px 16px;
+  border: none;
+  text-transform: uppercase;
+  background-color: #03a9f4;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 1px -2px,
+    rgba(0, 0, 0, 0.14) 0px 2px 2px 0px, rgba(0, 0, 0, 0.12) 0px 1px 5px 0px;
+  z-index: 999;
+}
+.manager-chat-button:hover {
+  background-color: #0288d1;
+}
+.page-header {
+  position: sticky;
+  top: 0;
+  margin-bottom: 20px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  background-color: #e0e0e0;
+  background-image: linear-gradient(to right, #03a9f4, #212121);
+  z-index: 999;
+}
+.page-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.page-nav {
+  display: flex;
+  gap: 8px;
+}
 .page-nav .link {
-  color: #00bcd4;
+  display: block;
+  padding: 4px 8px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  text-transform: uppercase;
 }
-.page-nav .link:hover {
-  color: #18ffff;
+.page-nav .link:hover,
+.page-nav .link:focus,
+.page-nav .link:active {
+  color: #f44336;
 }
-
-.club-list .link {
-  color: #ffc107;
+.hero {
+  padding: 48px;
+  background-color: #212121;
+  color: #fff;
+  border-radius: 12px;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 255, 0.15),
+      rgba(0, 0, 255, 0.15)
+    ),
+    url(https://cdn.pixabay.com/photo/2016/11/22/22/24/adult-1850925_1280.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
 }
-.club-list .link:hover {
-  color: #f57f17;
+.hero-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 24px;
+  font-size: 32px;
+  line-height: 1.333;
+  letter-spacing: 3px;
+}
+.hero-title::before,
+.hero-title::after {
+  content: '';
+  width: 100px;
+  height: 2px;
+  background-color: #fff;
+}
+.hero-title:hover::before,
+.hero-title:hover::after {
+  background-color: #03a9f4;
+}
+.section {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 2px dashed #212121;
+}
+.section-title {
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: 500;
+  text-align: center;
+  line-height: 1.333;
+  letter-spacing: 1px;
+}
+.section-text {
+  line-height: 1.5;
+  text-indent: 24px;
+}
+.club-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.club-list .item {
+  position: relative;
+  flex-basis: calc((100% - 32px) / 3);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0px 3px 3px -2px rgba(0, 0, 0, 0.2),
+    0px 3px 4px 0px rgba(0, 0, 0, 0.14), 0px 1px 8px 0px rgba(0, 0, 0, 0.12);
 }
